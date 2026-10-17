@@ -1,0 +1,44 @@
+{
+  "version": 2,
+  "dgSpecHash": "nGuZgYBTGHE=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\wesam\\NoteTakingApp\\NoteTakingApp\\NoteTakingApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\wesam\\.nuget\\packages\\communitytoolkit.mvvm\\8.0.0\\communitytoolkit.mvvm.8.0.0.nupkg.sha512",
+    "C:\\Users\\wesam\\.nuget\\packages\\microsoft.data.sqlite\\6.0.0\\microsoft.data.sqlite.6.0.0.nupkg.sha512",
+    "C:\\Users\\wesam\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.0\\microsoft.data.sqlite.core.6.0.0.nupkg.sha512",
+    "C:\\Users\\wesam\\.nuget\\packages\\pdfsharp\\1.32.2602\\pdfsharp.1.32.2602.nupkg.sha512",
+    "C:\\Users\\wesam\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.6\\sqlitepclraw.bundle_e_sqlite3.2.0.6.nupkg.sha512",
+    "C:\\Users\\wesam\\.nuget\\packages\\sqlitepclraw.core\\2.0.6\\sqlitepclraw.core.2.0.6.nupkg.sha512",
+    "C:\\Users\\wesam\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.6\\sqlitepclraw.lib.e_sqlite3.2.0.6.nupkg.sha512",
+    "C:\\Users\\wesam\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.0.6\\sqlitepclraw.provider.e_sqlite3.2.0.6.nupkg.sha512",
+    "C:\\Users\\wesam\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\wesam\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.55\\microsoft.windows.sdk.net.ref.10.0.19041.55.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "message": "NoteTakingApp depends on PDFsharp (>= 1.5.0.5184) but PDFsharp 1.5.0.5184 was not found. PDFsharp 1.32.2602 was resolved instead.",
+      "projectPath": "C:\\Users\\wesam\\NoteTakingApp\\NoteTakingApp\\NoteTakingApp.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\wesam\\NoteTakingApp\\NoteTakingApp\\NoteTakingApp.csproj",
+      "libraryId": "PDFsharp",
+      "targetGraphs": [
+        "net6.0-windows10.0.19041.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Package 'PDFsharp 1.32.2602' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0-windows10.0.19041'. This package may not be fully compatible with your project.",
+      "projectPath": "C:\\Users\\wesam\\NoteTakingApp\\NoteTakingApp\\NoteTakingApp.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\wesam\\NoteTakingApp\\NoteTakingApp\\NoteTakingApp.csproj",
+      "libraryId": "PDFsharp",
+      "targetGraphs": [
+        "net6.0-windows10.0.19041.0"
+      ]
+    }
+  ]
+}

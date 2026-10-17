@@ -1,0 +1,45 @@
+<Window
+    x:Class="NoteTakingApp.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NoteTakingApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:NoteTakingApp.Views.Converters"
+    mc:Ignorable="d">
+
+    <Window.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Window.Resources>
+
+    <Grid>
+        <NavigationView x:Name="NavView"
+                        IsBackEnabled="True"
+                        IsSettingsVisible="True"
+                        PaneDisplayMode="Left"
+                        OpenPaneLength="200"
+                        CompactModeThresholdWidth="640"
+                        ExpandedModeThresholdWidth="1008"
+                        SelectionChanged="NavView_SelectionChanged"
+                        ItemInvoked="NavView_ItemInvoked">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Icon="AllApps" Content="All Notes" Tag="AllNotes"/>
+                <NavigationViewItem Icon="Favorite" Content="Favorites" Tag="Favorites"/>
+                <NavigationViewItem Icon="Clock" Content="Recent" Tag="Recent"/>
+                <NavigationViewItemSeparator/>
+                <NavigationViewItem Icon="Folder" Content="Folders" Tag="Folders">
+                    <NavigationViewItem.MenuItems>
+                        <!-- Folders will be populated dynamically -->
+                    </NavigationViewItem.MenuItems>
+                </NavigationViewItem>
+                <NavigationViewItem Icon="Delete" Content="Trash" Tag="Trash"/>
+            </NavigationView.MenuItems>
+            <NavigationView.AutoSuggestBox>
+                <AutoSuggestBox QueryIcon="Find" PlaceholderText="Search notes"/>
+            </NavigationView.AutoSuggestBox>
+            <NavigationView.Content>
+                <Frame x:Name="ContentFrame"/>
+            </NavigationView.Content>
+        </NavigationView>
+    </Grid>
+</Window>

@@ -1,0 +1,28 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{A2B3C4D5-E6F7-890A-BCDE-F0A1B2C3D4E5}</ProjectGuid>
+    <ProjectTypeGuids>{EF308D7B-6A27-4B66-994D-2AAD9F60B3CE};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>AppContainerExe</OutputType>
+    <RootNamespace>NoteTakingApp.Package</RootNamespace>
+    <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+    <GenerateAppInstallerFile>false</GenerateAppInstallerFile>
+    <GenerateAppInstallerUri></GenerateAppInstallerUri>
+    <GenerateManifest>true</GenerateManifest>
+    <UapDefaultTargetPlatformVersion>10.0.19041.0</UapDefaultTargetPlatformVersion>
+    <UapMinVersion>10.0.19041.0</UapMinVersion>
+    <Identity Name="NoteTakingApp" Publisher="CN=wesam" Version="1.0.0.0" />
+    <DisplayName>NoteTakingApp</DisplayName>
+    <Description>NoteTakingApp</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240708000" />
+    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.6.3321" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NoteTakingApp\NoteTakingApp.csproj" />
+  </ItemGroup>
+  <Import Project="$(VDKDIR)\Microsoft.VsDK.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v17.0\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <Import Project="$(MSBuildSDKsPath)\Microsoft.WindowsAppSdk.Project\v1.0\Microsoft.WindowsAppSdk.Project.props" />
+  <Import Project="$(MSBuildSDKsPath)\Microsoft.WindowsAppSdk.Project\v1.0\Microsoft.WindowsAppSdk.Project.targets" />
+</Project>

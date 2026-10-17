@@ -1,0 +1,87 @@
+<Page
+    x:Class="NoteTakingApp.Views.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NoteTakingApp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:NoteTakingApp.ViewModels"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:SettingsDialogViewModel/>
+    </Page.DataContext>
+
+    <ScrollViewer>
+        <StackPanel Padding="24" Spacing="16">
+            <TextBlock Text="Settings"
+                       Style="{ThemeResource TitleTextBlockStyle}"
+                       Margin="0,0,0,16"/>
+
+            <!-- Appearance Section -->
+            <TextBlock Text="Appearance"
+                       Style="{ThemeResource SubtitleTextBlockStyle}"
+                       Margin="0,0,0,8"/>
+
+            <ToggleSwitch Header="Use system theme"
+                          IsOn="{Binding UseSystemTheme, Mode=TwoWay}"
+                          Toggled="UseSystemThemeToggle_Toggled"/>
+
+            <ToggleSwitch Header="Dark mode"
+                          IsOn="{Binding IsDarkModeEnabled, Mode=TwoWay}"
+                          IsEnabled="{Binding UseSystemTheme, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=inverse}"
+                          Margin="0,8,0,0"/>
+
+            <!-- Input Section -->
+            <TextBlock Text="Input"
+                       Style="{ThemeResource SubtitleTextBlockStyle}"
+                       Margin="0,24,0,8"/>
+
+            <ToggleSwitch Header="Palm rejection"
+                          IsOn="{Binding PalmRejectionEnabled, Mode=TwoWay}"
+                          Margin="0,0,0,8"/>
+
+            <ComboBox Header="Default tool"
+                      PlaceholderText="Select default tool"
+                      ItemsSource="{Binding DefaultTools}"
+                      SelectedItem="{Binding DefaultTool, Mode=TwoWay}"
+                      Margin="0,0,0,8"/>
+
+            <ComboBox Header="Default paper template"
+                      PlaceholderText="Select default paper template"
+                      ItemsSource="{Binding DefaultPaperTemplates}"
+                      SelectedItem="{Binding DefaultPaperTemplate, Mode=TwoWay}"
+                      Margin="0,0,0,8"/>
+
+            <!-- General Section -->
+            <TextBlock Text="General"
+                       Style="{ThemeResource SubtitleTextBlockStyle}"
+                       Margin="0,24,0,8"/>
+
+            <Slider Header="Auto-save interval (seconds)"
+                    Minimum="10"
+                    Maximum="300"
+                    StepLength="10"
+                    Value="{Binding AutoSaveIntervalSeconds, Mode=TwoWay}"
+                    Margin="0,0,0,8"/>
+
+            <ToggleSwitch Header="Show tooltips"
+                          IsOn="{Binding ShowTooltips, Mode=TwoWay}"
+                          Margin="0,8,0,0"/>
+
+            <!-- Action Buttons -->
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Spacing="12"
+                        Margin="0,24,0,0">
+                <Button Content="Reset to defaults"
+                        Click="ResetToDefaultButton_Click"
+                        Style="{ThemeResource ButtonRevealStyle}"/>
+
+                <Button Content="Save"
+                        Click="SaveButton_Click"
+                        Style="{ThemeResource AccentButtonStyle}"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
